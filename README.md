@@ -5,8 +5,10 @@ Este é um projeto desenvolvido em Flutter que simula um app de receitas. Ele pe
 
 ## 📱 Demonstração
 
-![App Demo](assets/demo/demo_gif_1.gif) ![App Demo](assets/demo/demo_gif_2.gif)
-
+<p align="center">
+  <img src="assets/demo/demo_gif_1.gif" alt="App Demo 1" width="300"/>
+  <img src="assets/demo/demo_gif_2.gif" alt="App Demo 2" width="300"/>
+</p>
 
 
 ## 📱 Funcionalidades
