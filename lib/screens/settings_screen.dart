@@ -28,14 +28,55 @@ class _SettingsScreenState extends State<SettingsScreen> {
     bool value,
     Function(bool) onChanged,
   ) {
-    return SwitchListTile.adaptive(
-      title: Text(title),
-      subtitle: Text(subtitle),
-      value: value,
-      onChanged: (value) {
-        onChanged(value);
-        widget.onSettingsChanged(settings!);
-      },
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      decoration: BoxDecoration(
+        color: value 
+            ? Theme.of(context).colorScheme.primary.withOpacity(0.1)
+            : Colors.grey[100],
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.15),
+            spreadRadius: 1,
+            blurRadius: 6,
+            offset: const Offset(0, 2),
+          ),
+        ],
+        border: Border.all(
+          color: value 
+              ? Theme.of(context).colorScheme.primary.withOpacity(0.5) 
+              : Colors.grey.withOpacity(0.4),
+          width: 2,
+        ),
+      ),
+      child: SwitchListTile.adaptive(
+        title: Text(
+          title,
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            color: value ? Theme.of(context).colorScheme.primary : Colors.black,
+            fontSize: 16,
+          ),
+        ),
+        subtitle: Text(
+          subtitle,
+          style: TextStyle(
+            color: value ? Colors.grey[700] : Colors.grey[600],
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        value: value,
+        activeColor: Theme.of(context).colorScheme.primary,
+        inactiveThumbColor: Colors.grey[400],
+        inactiveTrackColor: Colors.grey[300],
+        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        onChanged: (value) {
+          onChanged(value);
+          widget.onSettingsChanged(settings!);
+        },
+      ),
     );
   }
 

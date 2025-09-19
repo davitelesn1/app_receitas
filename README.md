@@ -3,7 +3,7 @@
 Este é um projeto desenvolvido em Flutter que simula um app de receitas. Ele permite ao usuário navegar por categorias de refeições, visualizar detalhes das receitas e gerenciar suas favoritas, além de ajustar preferências no menu de configurações.
 
 
-## 📱 demonstration
+## 📱 Demonstração
 
 ![App Demo](assets/demo/demo_gif_1.gif) ![App Demo](assets/demo/demo_gif_2.gif)
 
