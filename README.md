@@ -1,116 +1,112 @@
-# 🍽️ App de Receitas com Flutter
+# 🍽️ Recipe App with Flutter
 
-Este é um projeto desenvolvido em Flutter que simula um app de receitas. Ele permite ao usuário navegar por categorias de refeições, visualizar detalhes das receitas e gerenciar suas favoritas, além de ajustar preferências no menu de configurações.
+This is a project developed in Flutter that simulates a recipe app. It allows the user to browse meal categories, view recipe details, manage their favorites, and adjust preferences in the settings menu.
 
-
-## 📱 Demonstração
+## 📱 Demo
 
 <p align="center">
-  <img src="assets/demo/demo_gif_1.gif" alt="App Demo 1" width="300"/>
-  <img src="assets/demo/demo_gif_2.gif" alt="App Demo 2" width="300"/>
+
+<img src="assets/demo/demo_gif_1.gif" alt="App Demo 1" width="300"/>
+<img src="assets/demo/demo_gif_2.gif" alt="App Demo 2" width="300"/>
 </p>
 
+## 📱 Features
 
-## 📱 Funcionalidades
+- Navigation by **meal categories**
+- Viewing **meal details**
+- Adding and removing meals from **favorites**
+- **Settings** screen to apply diet filters
+- **Tabbed** interface for easier navigation
 
-- Navegação por **categorias de refeições**
-- Visualização de **detalhes das refeições**
-- Adição e remoção de refeições aos **favoritos**
-- Tela de **configurações** para aplicar filtros de dieta
-- Interface com **abas (tabs)** para facilitar a navegação
+## 🧠 Key Learnings
 
-## 🧠 Principais Aprendizados
+During the development of this app, several essential Flutter concepts were addressed and reinforced. Key highlights include:
 
-Durante o desenvolvimento deste app, foram abordados e fixados diversos conceitos essenciais do Flutter. Entre os principais destaques estão:
+### ✅ Use of Named Routes
 
-### ✅ Uso de Rotas Nomeadas
-
-A navegação entre telas foi organizada com **rotas nomeadas**, centralizadas no arquivo `app_routes.dart`, facilitando a manutenção e evitando o uso de strings soltas no código:
+Navigation between screens was organized using **named routes**, centralized in the `app_routes.dart` file, facilitating maintenance and avoiding the use of loose strings in the code:
 
 ```dart
 class AppRoutes {
-  static const HOME = '/';
-  static const CATEGORIES_MEALS = '/categories-meals';
-  static const MEAL_DETAIL = '/meal-detail';
-  static const SETTINGS = '/settings';
+
+static const HOME = '/';
+
+static const CATEGORIES_MEALS = '/categories-meals';
+
+static const MEAL_DETAIL = '/meal-detail';
+
+static const SETTINGS = '/settings';
 }
 ```
 
-Isso garante um fluxo de navegação limpo e seguro entre as telas principais como:
+This ensures a clean and safe navigation flow between the main screens such as:
 
 - `CategoriesScreen`
 - `CategoriesMealsScreen`
 - `MealDetailScreen`
 - `SettingsScreen`
 
-### 🧩 Organização por Telas
+### 🧩 Screen Organization
 
-Cada tela foi criada em um arquivo separado, reforçando a modularização do projeto. As principais telas são:
+Each screen was created in a separate file, reinforcing the modularity of the project. The main screens are:
 
-- `CategoriesScreen`: Mostra as categorias de refeições
-- `CategoriesMealsScreen`: Lista as refeições da categoria selecionada
-- `MealDetailScreen`: Exibe detalhes de uma refeição específica
-- `FavoriteScreen`: Lista as refeições favoritas
-- `SettingsScreen`: Permite aplicar filtros (gluten-free, lactose-free etc.)
-- `TabsScreen`: Controla a navegação por abas entre "Categorias" e "Favoritos"
+- `CategoriesScreen`: Shows meal categories
+- `CategoriesMealsScreen`: Lists meals in the selected category
+- `MealDetailScreen`: Displays details of a specific meal
+- `FavoriteScreen`: Lists favorite meals
+- `SettingsScreen`: Allows you to apply filters (gluten-free, lactose-free, etc.)
+- `TabsScreen`: Controls tabbed navigation between "Categories" and "Favorites"
 
-### 🔁 Navegação com Abas
+### 🔁 Tabbed Navigation
 
-Foi utilizada a `BottomNavigationBar` para alternar entre duas seções principais:
+The `BottomNavigationBar` was used to switch between two main sections:
 
-- **Categorias**
-- **Favoritos**
+- **Categories**
 
-Isso foi implementado na `TabsScreen`, garantindo uma experiência fluida e intuitiva.
+- **Favorites**
 
-### ⚙️ Filtros Personalizados
+This was implemented in the `TabsScreen`, ensuring a fluid and intuitive experience.
 
-A `SettingsScreen` permite ao usuário aplicar filtros, e essas preferências são passadas como parâmetros para atualizar a lista de refeições exibidas.
+### ⚙️ Custom Filters
+
+The `SettingsScreen` allows the user to apply filters, and these preferences are passed as parameters to update the list of displayed meals.
 
 ---
 
-## 📂 Estrutura de Arquivos
+## 📂 File Structure
 
 ```
 lib/
 ├── components/
-│   ├── category_item.dart
-│   ├── main_drawer.dart
-│   └── meal_item.dart
-├── data/
-│   └── dummy_data.dart
+│ ├── category_item.dart
+│ ├── main_drawer.dart
+│ └── meal_item.dart
+├── date/
+│ └── dummy_data.dart
 ├── app_routes.dart
 ├── models/
-│   ├── category.dart
-│   ├── meal.dart
-│   └── settings.dart
+│ ├── category.dart
+│ ├── meal.dart
+│ └── settings.dart
 ├── screens/
-│   ├── categories_screen.dart
-│   ├── categories_meals_screen.dart
-│   ├── favorite_screen.dart
-│   ├── meal_detail_screen.dart
-│   ├── settings_screen.dart
-│   └── tabs_screen.dart
+│ ├── categories_screen.dart
+│ ├── categories_meals_screen.dart
+│ ├── favorite_screen.dart
+│ ├── meal_detail_screen.dart
+│ ├── settings_screen.dart
+│ └── tabs_screen.dart
 ├── utils/
-│   └── app_routes.dart
+│ └── app_routes.dart
 └── main.dart
 
 ```
 
 ---
 
-## 🧑‍💻 Tecnologias Usadas
+## 📌 Notes
 
-- Flutter
-- Dart
+This project was developed for educational purposes as part of a Flutter learning journey. The focus is on the correct use of:
 
----
-
-## 📌 Observações
-
-Este projeto foi desenvolvido com fins educativos como parte de uma jornada de aprendizado em Flutter. O foco está no uso correto de:
-
-- Rotas nomeadas
-- Gerenciamento de estado simples com `setState`
-- Modularização com múltiplas telas
-
+- Named routes
+- Simple state management with `setState`
+- Modularization with multiple screens
